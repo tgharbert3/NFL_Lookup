@@ -1,6 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-import API_KEY from "../services/api.ts";
 import { createAppAsyncThunk } from "./withTypes";
 import { Team } from "./currentTeamSlice";
 import { RootState } from "./store";
@@ -47,7 +46,7 @@ export const fetchGameByWeek = createAppAsyncThunk('game/fetchGame', async (week
 
     const response = await fetch(`https://api.balldontlie.io/nfl/v1/games?seasons[]=2024&weeks[]=${week}&postseason=false`, {
         headers: {
-            Authorization: API_KEY,
+            Authorization: import.meta.env.VITE_API_KEY,
         }
     });
     const responseJSON =  await response.json();
@@ -58,7 +57,7 @@ export const fetchGameByID = createAppAsyncThunk('game/fetchGameByID', async (id
 
     const response = await fetch(`https://api.balldontlie.io/nfl/v1/games?seasons[]=2024&team_ids[]=${id}`, {
         headers: {
-            Authorization: API_KEY,
+            Authorization: import.meta.env.VITE_API_KEY,
         }
     });
     const responseJSON =  await response.json();

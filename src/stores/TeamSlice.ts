@@ -30,7 +30,7 @@ export const initialState: TeamState = {
 export const fetchTeams = createAppAsyncThunk('teams/fetchTeams', async () => {
     const response = await fetch("https://api.balldontlie.io/nfl/v1/teams", {
         headers: {
-            Authorization: import.meta.env.API_KEY,
+            Authorization: import.meta.env.VITE_API_KEY,
         }
     });
     const responseJSON = await response.json()
