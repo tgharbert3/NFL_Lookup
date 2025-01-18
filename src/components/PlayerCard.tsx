@@ -16,23 +16,23 @@ export default function PlayerCard( { position, position_abbreviation, height, w
             <div className="
                 w-11/12 rounded-xl p-4 text-center
                 border border-black bg-cyan-500 text-slate-200
-                grid grid-rows-2 grid-cols-8">
+                flex flex-col md:grid md:grid-rows-2 md:grid-cols-8">
                 <div>{position}</div>
-                <div className='row-start-2 text-sm'>Position</div>
+                <div className='row-start-2 text-sm mb-1.5'>Position</div>
                 <div>{position_abbreviation}</div>
-                <div className='row-start-2 text-sm'>Position Abbreviation</div>
+                <div className='row-start-2 text-sm mb-1.5'>Position Abbreviation</div>
                 <div>{height}</div>
-                <div className='row-start-2 text-sm'>Height</div>
+                <div className='row-start-2 text-sm mb-1.5'>Height</div>
                 <div>{weight}</div>
-                <div className='row-start-2 text-sm'>Weight</div>
+                <div className='row-start-2 text-sm mb-1.5'>Weight</div>
                 <div>{jersey_number}</div>
-                <div className='row-start-2 text-sm'>Jersey Number</div>
+                <div className='row-start-2 text-sm mb-1.5'>Jersey Number</div>
                 <div>{college}</div>
                 <div className='row-start-2 text-sm align-text-bottom'>College</div>
                 <div>{experience}</div>
-                <div className='row-start-2 text-sm'>Experence</div>
+                <div className='row-start-2 text-sm mb-1.5'>Experence</div>
                 <div>{full_name}</div>
-                <div className='row-start-2 text-sm'>Team</div>
+                <div className='row-start-2 text-sm mb-1.5'>Team</div>
             </div>
         </section>
     )

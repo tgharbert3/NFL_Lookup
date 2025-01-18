@@ -161,7 +161,7 @@ export default function SearchBar() {
                 <div className="basis-1/3 text-center">
                     <Link to='/'>Home</Link>
                 </div>
-                <div className="bg-slate-200 basis-2/4 text-center">
+                <div className="bg-slate-200 basis-3/4 text-center">
                     <form className="" onSubmit={onSubmitHandler}>
                         <input type="search" placeholder="Search for Players or Teams" 
                             className="border border-black rounded-md mr-3.5 w-3/4" 
