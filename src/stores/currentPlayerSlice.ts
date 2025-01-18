@@ -33,7 +33,6 @@ const initialState: PlayerState = {
 
 export const fetchPlayer = createAppAsyncThunk('player/fetchPlayer', async (names: string[]) => {
 
-    console.log(import.meta.env.VITE_API_KEY)
     const response = await fetch(`https://api.balldontlie.io/nfl/v1/players/?first_name=${names[0]}&last_name=${names[1]}`, {
         headers: {
             Authorization: import.meta.env.VITE_API_KEY,

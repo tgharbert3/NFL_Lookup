@@ -34,7 +34,6 @@ export default function PlayerCard( { position, position_abbreviation, height, w
                 <div>{full_name}</div>
                 <div className='row-start-2 text-sm'>Team</div>
             </div>
-
         </section>
     )
 }

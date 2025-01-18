@@ -152,7 +152,6 @@ export default function SearchBar() {
 
     async function getPlayer(names: string[]) {
         const foundPlayer = await dispatch(fetchPlayer(names));
-        console.log(foundPlayer);
         return foundPlayer;
     } 
 
