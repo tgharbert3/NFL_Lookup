@@ -43,7 +43,7 @@ export const initialState: GameState = {
 }
 
 
-export const fetchGame = createAppAsyncThunk('game/fetchGame', async (week: string) => {
+export const fetchGameByWeek = createAppAsyncThunk('game/fetchGame', async (week: string) => {
 
     const response = await fetch(`https://api.balldontlie.io/nfl/v1/games?seasons[]=2024&weeks[]=${week}&postseason=false`, {
         headers: {
