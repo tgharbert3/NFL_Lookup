@@ -38,7 +38,7 @@ export const fetchTeams = createAppAsyncThunk('teams/fetchTeams', async () => {
     return result
 },
 {
-    condition(arg, thunkApi) {
+    condition(_arg, thunkApi) {
         const teamStatus = selectTeamStatus(thunkApi.getState())
         if (teamStatus !== 'idle') {
             return false
@@ -52,10 +52,7 @@ export const TeamSlice = createSlice({
     reducers: {
         teamAdded(state, action: PayloadAction<Team[]>) {
             state.teams = action.payload
-        },
-        teamsReset(state) {
-            state = initialState;
-        }    
+        },   
     },
     extraReducers(builder) {
         builder
@@ -73,7 +70,7 @@ export const TeamSlice = createSlice({
     },
 })
 
-export const { teamAdded, teamsReset } = TeamSlice.actions;
+export const { teamAdded } = TeamSlice.actions;
 export default TeamSlice.reducer
 
 export const selectAllTeams = (state: RootState) => state.teams.teams
