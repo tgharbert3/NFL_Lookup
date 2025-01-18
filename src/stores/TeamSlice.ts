@@ -3,7 +3,7 @@ import { createSlice, PayloadAction} from '@reduxjs/toolkit';
 import { RootState } from './store';
 import { createAppAsyncThunk } from './withTypes';
 
-import API_KEY from '../services/api';
+
 
 export interface Team {
     id: number;
@@ -30,7 +30,7 @@ export const initialState: TeamState = {
 export const fetchTeams = createAppAsyncThunk('teams/fetchTeams', async () => {
     const response = await fetch("https://api.balldontlie.io/nfl/v1/teams", {
         headers: {
-            Authorization: API_KEY,
+            Authorization: import.meta.env.API_KEY,
         }
     });
     const responseJSON = await response.json()

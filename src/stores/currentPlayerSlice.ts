@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { createAppAsyncThunk } from "./withTypes";
 
-import API_KEY from "../services/api";
+import API_KEY from "../services/api.ts";
 import { Team } from "./currentTeamSlice";
 import { RootState } from "./store";
 
