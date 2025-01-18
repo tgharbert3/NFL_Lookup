@@ -5,7 +5,7 @@ import { createAppAsyncThunk } from "./withTypes";
 import { Team } from "./currentTeamSlice";
 import { RootState } from "./store";
 
-interface game {
+export interface game {
     id: number | null;
     visitor_team: Team;
     home_team: Team;
@@ -43,16 +43,15 @@ export const initialState: GameState = {
 }
 
 
-export const fetchGame = createAppAsyncThunk('game/fetchGame', async () => {
+export const fetchGame = createAppAsyncThunk('game/fetchGame', async (week: string) => {
 
-    const response = await fetch('https://api.balldontlie.io/nfl/v1/games?seasons[]=2024&per_page=100', {
+    const response = await fetch(`https://api.balldontlie.io/nfl/v1/games?seasons[]=2024&weeks[]=${week}&postseason=false`, {
         headers: {
             Authorization: API_KEY,
         }
     });
     const responseJSON =  await response.json();
-    const result = responseJSON.data
-    return result
+    return responseJSON;
 })
 
 export const fetchGameByID = createAppAsyncThunk('game/fetchGameByID', async (id: string) => {

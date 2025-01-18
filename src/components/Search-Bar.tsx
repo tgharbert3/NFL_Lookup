@@ -168,7 +168,7 @@ export default function SearchBar() {
                     </form>
                 </div>
                 <div className=" basis-1/3 text-center">
-                    <Link to='/games' className="inline">Games</Link>
+                    <Link to='/games/week/1' className="inline">Games</Link>
                 </div>
             </div>
             <Outlet />

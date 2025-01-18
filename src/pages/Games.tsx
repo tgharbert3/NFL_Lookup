@@ -1,22 +1,25 @@
-import { useAppSelector } from "../stores/hooks";
-import { selectGames } from "../stores/GameSlice"
-import GameCard from "../components/GameCard";
+import TeamGameCard from "../components/TeamGameCard";
 import { useParams } from "react-router";
+import { useAppSelector } from "../stores/hooks";
+import { selectGames } from "../stores/GameSlice";
 
 
 
 export default function Game() {
 
+    
     const games = useAppSelector(selectGames)
 
     const { id } = useParams();
+
+    
             
     if (id) {
         return (
             <div className="h-full">
                 {games.map(game => {
                 return <div key={game.id} className="m-3 flex justify-center">
-                        <GameCard 
+                        <TeamGameCard 
                             week={game.week} 
                             home_team={game.home_team} 
                             visitor_team={game.visitor_team} 
@@ -30,9 +33,15 @@ export default function Game() {
             </div>
         )
     } else {
-        return(
-            <div>no ID</div>
+        return (
+            <div>
+                <div>We Are still here</div>
+            </div>
+                
+           
         )
     }
+       
+        
     
 }
