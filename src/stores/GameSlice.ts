@@ -74,10 +74,24 @@ export const GameSlice = createSlice({
         gameSet: (state, action: PayloadAction<game[]>) => {
             state.games = action.payload;
         },
-    }
+    },
+    extraReducers(builder) {
+        builder
+            .addCase(fetchGameByWeek.pending, (state) => {
+                state.status = 'pending'
+            })
+            .addCase(fetchGameByWeek.fulfilled, (state) => {
+                state.status = 'succeeded'
+            })
+            .addCase(fetchGameByWeek.rejected, (state, action) => {
+                state.status = 'failed'
+                state.error = action.error.message ?? 'Unknown Error'
+            })
+    },
 })
 
 export default GameSlice.reducer;
 export const { gameSet } = GameSlice.actions;
 
-export const selectGames= (state: RootState) => state.games.games
+export const selectGames= (state: RootState) => state.games.games;
+export const selectGamesStatus = (state: RootState) => state.games.status;

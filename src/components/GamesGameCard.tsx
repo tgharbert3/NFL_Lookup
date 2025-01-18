@@ -1,5 +1,6 @@
 import { Team } from "../stores/currentTeamSlice";
 
+
 interface GameProps {
     home_team: Team;
     visitor_team: Team;

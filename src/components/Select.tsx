@@ -16,7 +16,6 @@ export default function Select() {
 
     useEffect(() => {
         async function getWeek() {
-            console.log(selectedValue);
             await dispatch(fetchGameByWeek(selectedValue))
             .then(response => {dispatch(gameSet(response.payload.data))})
         }

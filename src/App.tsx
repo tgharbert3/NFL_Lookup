@@ -7,6 +7,7 @@ import Team from './pages/Teams'
 import Player from './pages/Player'
 import Game from './pages/Games'
 import Select from './components/Select'
+import NotFound from './components/NotFound'
 
 
 
@@ -24,6 +25,7 @@ function App() {
                 <Route element={<Select />}>
                   <Route path='/games/week/:week' element={<Game />} />
                 </Route>
+                <Route path='/NotFound' element={<NotFound />} /> 
             </Route>
         </Routes>
       </div>

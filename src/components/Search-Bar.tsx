@@ -92,6 +92,10 @@ export default function SearchBar() {
                 handleTeamNavigation(currentTeam);
                 setSearchPhrase("");
             }
+            
+            if (filteredLoactions.length === 0 && filteredNames.length === 0) {
+                navigate('/NotFound');
+            }
         }
         if (phrase.length === 2) {
             if (filteredFullTeamNames.length > 0) {
@@ -148,6 +152,7 @@ export default function SearchBar() {
 
     async function getPlayer(names: string[]) {
         const foundPlayer = await dispatch(fetchPlayer(names));
+        console.log(foundPlayer);
         return foundPlayer;
     } 
 
