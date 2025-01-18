@@ -48,3 +48,4 @@ export default tseslint.config({
   },
 })
 ```
+1/17/25: Todo: Add a not found component for when search returns nothing.
